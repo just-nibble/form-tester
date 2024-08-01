@@ -38,8 +38,8 @@ const FormComponent = () => {
           name: '',
           email: '',
           message: '',
-          'clientId': '26691',
-          'customerPhone': '2348102416606',
+          clientId: '26691',
+          customerPhone: '2348102416606',
         });
       } else {
         console.error('Form submission failed');
