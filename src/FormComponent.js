@@ -35,9 +35,6 @@ const FormComponent = () => {
         console.log('Form submitted successfully');
         // Clear the form
         setFormData({
-          name: '',
-          email: '',
-          message: '',
           clientId: '26691',
           customerPhone: '2348102416606',
         });
@@ -52,31 +49,20 @@ const FormComponent = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message:</label>
+        <label htmlFor="message">clientId:</label>
         <textarea
           id="message"
           name="message"
-          value={formData.message}
+          value={formData.clientId}
+          onChange={handleChange}
+        ></textarea>
+      </div>
+      <div>
+        <label htmlFor="message">customerPhone:</label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.customerPhone}
           onChange={handleChange}
         ></textarea>
       </div>
