@@ -18,10 +18,16 @@ const FormComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/form', {
+      const response = await fetch('https://stg-api-pay.bet9ja.com/paymentshubapi/WalletTransferV1/Request', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'accountid': 1, //sample accountid,
+          'username': 'testUs3rnam3', //sample username
+          'password': 'testP4ssw0rd', //sample password,
+          'timestamp': '20160529235959',
+          'operation': 'CustomerValidation',
+          'hash': 'N2Y4NWNiMTU3NDQ5OWEyZDE3MjY1MWRmMWEzYzk4NDZmNDRiZGIyNjNmOGMzNTlhMGYwODZlOWRiYTBjMWYwOQ==',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify(formData),
       });
@@ -32,6 +38,8 @@ const FormComponent = () => {
           name: '',
           email: '',
           message: '',
+          'clientId': '26691',
+          'customerPhone': '2348102416606',
         });
       } else {
         console.error('Form submission failed');
